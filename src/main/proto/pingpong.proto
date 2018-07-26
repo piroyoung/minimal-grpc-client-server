@@ -1,0 +1,21 @@
+
+syntax = "proto3";
+package pingpong;
+
+option java_multiple_files = true;
+option java_generic_services = true;
+option java_package = "com.github.piroyoung.protobuf";
+option java_outer_classname = "PingPong";
+
+
+message Request {
+    string message = 1;
+}
+
+message Response {
+    string message = 1;
+}
+
+service PingPongService {
+    rpc request(Request) returns (Response);
+}
